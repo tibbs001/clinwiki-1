@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 ruby "2.2.3"
 
+gem 'letsencrypt-rails-heroku', group: 'production'
 gem 'passenger'
 gem 'zip'
 gem 'rails', '4.2.6'
