@@ -52,9 +52,16 @@ gem 'therubyracer'
 gem 'figaro'
 gem 'puma'
 gem 'net-ssh'
+gem "formulaic"
+gem "database_cleaner"
 
 group :test do
   gem "rspec-rails", "~> 3.4.0"
+  gem "launchy"
+  gem "simplecov", require: false
+  gem "timecop"
+  gem "webmock"
+  gem "vcr"
 end
 
 group :development do
