@@ -121,10 +121,10 @@ class Study < AactBase
 
   def tracking_info
     [
-      {:label=>'first_received_date',:value=>first_received_date},
-      {:label=>'last_changed_date',:value=>last_changed_date},
-      {:label=>'start_date',:value=>start_date},
-      {:label=>'primary_completion_date',:value=>primary_completion_date},
+      {:label=>'first received date',:value=>first_received_date},
+      {:label=>'last changed date',:value=>last_changed_date},
+      {:label=>'start date',:value=>start_date},
+      {:label=>'primary completion date',:value=>primary_completion_date},
       {:label=>'primary outcome measures',:value=>primary_outcome_measures},
       {:label=>'secondary outcome measures',:value=>secondary_outcome_measures},
     ]
@@ -159,6 +159,13 @@ class Study < AactBase
       {:label=>'listed location countries',:value=>'tbd'},
       {:label=>'removed location countries',:value=>'tbd'},
     ]
+  end
+
+  def facility_list
+    col=[]
+    cntr=1
+    facilities.each{ |f| col << {:label=>"#{cntr}", :value=>f.description.strip}; cntr=cntr+1 }
+    col
   end
 
   scope :search_import, -> {

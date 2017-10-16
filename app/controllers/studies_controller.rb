@@ -33,6 +33,7 @@ class StudiesController < ApplicationController
 
   def tracking
     render json: Study.find(params[:study_id]).tracking_info
+    #render json: Study.find(params[:study_id]).facility_list
   end
 
   def descriptive
@@ -41,6 +42,10 @@ class StudiesController < ApplicationController
 
   def crowd
     render json: Study.find(params[:study_id]).crowd_source_info
+  end
+
+  def facilities
+    render json: Study.find(params[:study_id]).facility_list
   end
 
   private
