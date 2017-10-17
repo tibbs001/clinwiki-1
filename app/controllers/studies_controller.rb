@@ -43,7 +43,7 @@ class StudiesController < ApplicationController
     render json: Study.find(params[:study_id]).crowd_source_info
   end
 
-  def facility
+  def sites
     render json: Study.find(params[:study_id]).facility_list
   end
 
